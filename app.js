@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
 /* Projects */
 const PROJECTS = [
   {
-    title: "Personal Portfolio Website",
+    title: "personal website",
     tag: "Frontend",
-    blurb: "Responsive single-page portfolio with smooth navigation, modals, filters, and micro-interactions.",
+    blurb: "In 2025, I built a custom website: <a href=\"https://abrandonwang.github.io/Portfolio/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"project-link\">abrandonwang.github.io/Portfolio</a>",
     stack: ["HTML", "CSS", "JavaScript", "Accessibility"],
     details: `
       <ul>
@@ -153,44 +153,19 @@ const PROJECTS = [
     `,
   },
   {
-    title: "Interactive Quiz Engine",
-    tag: "Systems",
-    blurb: "Rules-based quiz engine with weighted outcomes and reusable question abstractions.",
-    stack: ["Racket", "Testing", "Abstractions"],
-    details: `
-      <ul>
-        <li>Clean separation: model vs scoring vs runner</li>
-        <li>Edge cases: ties, invalid selections</li>
-        <li>Designed for extensibility: new question types</li>
-      </ul>
-    `,
-  },
-  {
-    title: "Algorithmic Practice Toolkit",
-    tag: "Data",
-    blurb: "Organized algorithm practice with benchmarks + tests to validate correctness on edge cases.",
-    stack: ["Python", "DSA", "Unit Tests"],
-    details: `
-      <ul>
-        <li>Automated test generation for corner cases</li>
-        <li>Runtime benchmarking with repeat trials</li>
-        <li>Complexity notes per solution</li>
-      </ul>
-    `,
-  },
-  {
-    title: "Linear Algebra Mesh Transformer",
-    tag: "Data",
-    blurb: "Applied 3×3 transforms to triangle meshes; visualized geometry changes and validated constraints.",
-    stack: ["MATLAB", "Linear Algebra", "Visualization"],
-    details: `
-      <ul>
-        <li>Validated arguments and matrix dimensions</li>
-        <li>Efficient transforms via matrix multiplication</li>
-        <li>Worked with connectivity matrices + vertices</li>
-      </ul>
-    `,
-  },
+  title: "algorithm visualizer",
+  tag: "Frontend",
+  blurb: "Interactive visualizer for classic sorting + searching algorithm: <a href=\"https://abrandonwang.github.io/algorithm-visual/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"project-link\">abrandonwang.github.io/algorithm-visual</a>",
+  stack: ["HTML", "CSS", "JavaScript", "Algorithms", "UI State"],
+  details: `
+    <ul>
+      <li>Visualizes multiple algorithms (Bubble/Selection/Insertion/Merge/Quick/Heap + Linear/Binary search)</li>
+      <li>Playback system: play, pause, step, reset + adjustable speed</li>
+      <li>Configurable inputs: random generation, manual array entry, and array size control</li>
+      <li>Context panel with algorithm description, time/space complexity, and pseudocode for learning</li>
+    </ul>
+  `,
+}
 ];
 
 let ACTIVE_FILTER = "All";

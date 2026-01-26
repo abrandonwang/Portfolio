@@ -75,15 +75,16 @@ a { color: inherit; }
   border-radius: 10px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.nav__homepage:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--glow);
-}
 
 .logo-initials {
   font-size: 20px;
   font-weight: 300;
   letter-spacing: -1.5px;
+  text-decoration: none;
+}
+
+.logo-initials:hover {
+  opacity: 0.7;
 }
 
 .nav-pill {
@@ -125,6 +126,10 @@ a { color: inherit; }
   padding: 0;
   cursor: pointer;
   color: white;
+}
+
+.menu-btn:hover {
+  opacity: 0.7;
 }
 .menu-btn span {
   display: block;
@@ -307,10 +312,18 @@ a { color: inherit; }
 
 .hero-sub {
   margin: 0;
+  margin-bottom: 12px;
   max-width: 720px;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.8;
   font-size: 15px;
+}
+
+.btn, .btn.primary, .btn_primary {
+  text-decoration: none;
+}
+.btn.primary:hover {
+  opacity: 0.7;
 }
 
 /* typewriter */
@@ -358,8 +371,7 @@ a { color: inherit; }
   will-change: transform;
 }
 
-.card:hover .card-inner,
-.card:focus-within .card-inner {
+.card-inner:hover{
   transform: translateY(-1px);
   border-color: rgba(145, 75, 241, 0.55);
   box-shadow: var(--glow);
