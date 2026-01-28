@@ -629,6 +629,16 @@ a { color: inherit; }
 }
 .modal-body ul { padding-left: 18px; }
 
+.modal.modal--project .modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.modal--about .modal-body {
+  display: flex;
+  gap: 18px;
+}
+
 .modal-close {
   position: absolute;
   top: 14px;

@@ -212,9 +212,10 @@ function renderProjects(grid, query, filter) {
       openModal(
         proj.title,
         `<p style="margin-top:0;color:rgba(255,255,255,0.78)">${proj.blurb}</p>${proj.details}
-         <div style="margin-top:14px"><b>Stack:</b> ${proj.stack
-           .map((s) => `<span class="pill" style="display:inline-block;margin:6px 6px 0 0">${s}</span>`)
-           .join("")}</div>`
+        <div style="margin-top:14px"><b>Stack:</b> ${proj.stack
+          .map((s) => `<span class="pill" style="display:inline-block;margin:6px 6px 0 0">${s}</span>`)
+          .join("")}</div>`,
+        "modal--project"
       );
     };
 
@@ -329,9 +330,12 @@ function getFocusable(container) {
   return Array.from(container.querySelectorAll(selectors.join(",")));
 }
 
-function openModal(title, html) {
+function openModal(title, html, variant = "") {
   if (!modal || !modalTitle || !modalBody) return;
   lastFocus = document.activeElement;
+
+  modal.classList.remove("modal--project", "modal--about");
+  if (variant) modal.classList.add(variant);
 
   modalTitle.textContent = title;
   modalBody.innerHTML = html;
@@ -350,6 +354,7 @@ function closeModal() {
   if (!modal || !modalTitle || !modalBody) return;
 
   modal.classList.remove("open");
+  modal.classList.remove("modal--project", "modal--about");
   modal.setAttribute("aria-hidden", "true");
   modalTitle.textContent = "";
   modalBody.innerHTML = "";
@@ -405,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      openModal(title, tpl.innerHTML);
+      openModal(title, tpl.innerHTML, "modal--about");
     });
 
     section.addEventListener("keydown", (e) => {
