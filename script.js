@@ -49,7 +49,7 @@ let scene, camera, renderer, particles;
     animate();
 }
     */
-
+/*
 function animate() {
     requestAnimationFrame(animate);
     
@@ -63,13 +63,13 @@ function animate() {
     particles.geometry.attributes.position.needsUpdate = true;
     
     renderer.render(scene, camera);
-}
+}*/
 
-window.addEventListener('resize', () => {
+/*window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-});
+});*/
 
 // Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
@@ -147,38 +147,46 @@ const projectData = [
         image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop',
         description: 'Contributed to building modern web applications with a focus on performance and user experience. Collaborated with a talented team to deliver high-quality products.',
         detailImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop'
-    },
-    {
-        title: 'Meta',
-        type: 'Project',
-        year: '2024',
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=800&fit=crop',
-        description: 'Developed features for social networking platforms, working on scalability and real-time communication systems. Enhanced user engagement through innovative features.',
-        detailImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=800&fit=crop'
     },*/
     {
-        title: 'Things',
-        type: 'Project',
+        title: 'navigational keyboard',
+        type: 'class project',
         year: '2024',
-        image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop',
-        description: 'Built productivity tools that help users manage their tasks efficiently. Focused on creating an intuitive and delightful user experience.',
-        detailImage: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop'
+        image: 'images/navkeyboard.png',
+        description: 'For DTC 1, I built a navigational keyboard that allows users with cerebral palsy to type using a joystick. It was published to the chrome web store and is currently being used by <a href = "https://www.misericordia.com/">Misericordia.</a> It was also featured in the Northwestern Daily and on the DTC website.',
+        detailImage: 'images/navkeyboard.png',
+        description1: 'features:',
+        detailImage1: 'images/nav1keyboard.png'
     },
     {
-        title: 'Open Source',
-        type: 'Contributor',
-        year: '2023',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop',
-        description: 'Active contributor to various open-source projects, helping improve documentation, fix bugs, and implement new features for the community.',
-        detailImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop'
+        title: 'algorithm visualizer',
+        type: 'side project',
+        year: '2025',
+        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=800&fit=crop',
+        description: 'In my second project, I built an algorithm visualizer using basic web dev languages. It visualizes sorting algorithms i.e. quicksort, mergesort and includes pseudocode that highlights the current operation being executed.',
+        detailImage: 'images/alg1visual.png',
+        description1: 'I also including two searching algs: linear and binary with a speed and array size configuration implemented.',
+        detailImage1: 'images/alg2visual.png'
     },
     {
-        title: 'Personal Project',
-        type: 'Side Project',
-        year: '2023',
+        title: 'password generator',
+        type: 'first project',
+        year: '2024',
+        image: 'images/passwordpic.png',
+        description: 'In my first project, I built a password generator using basic web dev languages. It generates strong passwords based on user-selected length and includes a web-based strength checking algorithm.',
+        detailImage: 'images/passwordpic.png',
+        description1: 'features:',
+        detailImage1: 'images/password1pic.png'
+    },
+    {
+        title: 'personal website',
+        type: 'side project',
+        year: '2024',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
-        description: 'In summer 2025, I built a Three.js personal website: abrandonwang.github.io',
-        detailImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop'
+        description: 'In summer 2024, I built a Three.js personal website: <a href="https://brandonwang.work" target="_blank">brandonwang.work</a>',
+        detailImage: 'images/portfolio1pic.png',
+        description1: 'This was my first prototype:',
+        detailImage1: 'images/oldporfolio.png'
     }
 ];
 
@@ -201,6 +209,8 @@ function openModal(index) {
         <p class="modal-description">${project.description}</p>
         
         <img src="${project.detailImage}" alt="${project.title}" class="modal-image">
+        ${project.description1 ? `<p class="modal-description1">${project.description1}</p>` : ''}
+        ${project.detailImage1 ? `<img src="${project.detailImage1}" alt="${project.title}" class="modal-image">` : ''}
     `;
     
     projectModal.classList.add('active');

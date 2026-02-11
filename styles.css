@@ -505,7 +505,7 @@ body {
     color: var(--text-primary);
 }
 
-.modal-description {
+.modal-description, .modal-description1 {
     max-width: 602px;
     width: 100%;
     font-size: 0.95rem;
@@ -534,7 +534,7 @@ body {
 
 .modal-image {
     max-width: 520px;
-    width: 100%;
+    width: 520px;
     border-radius: 8px;
     margin-bottom: 3rem;
     object-fit: cover;
