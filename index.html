@@ -1,262 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>brandon's website</title>
-
-    <meta name="description" content="Brandon Wang — CS @ Northwestern. Building clean interfaces and thoughtful software." />
-    <meta name="color-scheme" content="dark" />
-
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-    />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="images/randominage.png">
-</head> 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Wang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <a class="skip-link" href="#top">Skip to content</a>
+    <!-- Three.js Canvas Background -->
+    <canvas id="webgl-canvas"></canvas>
 
-    <div id="site_content">
-    <!-- Floating dock -->
-    <nav class="floating-dock" aria-label="Quick navigation">
-        <a class="dock-dot" href="#top" data-label="Home" data-target="top" aria-label="Home"></a>
-        <a class="dock-dot" href="#about" data-label="About" data-target="about" aria-label="About"></a>
-        <a class="dock-dot" href="#projects" data-label="Projects" data-target="projects" aria-label="Projects"></a>
-        <a class="dock-dot" href="#course" data-label="Courses" data-target="course" aria-label="Courses"></a>
-        </nav>
-
-
-    <!-- Top nav -->
-    <header class="nav__container">
-        <div class="nav__homepage__big">
-        <a class="nav__homepage" href="#top" aria-label="Home">
-            <span class="logo-initials">bw</span>
-        </a>
-
-        <div class="nav-pill" aria-hidden="true">
-            <span class="dot"></span>
-            <span>cs @ northwestern</span>
-        </div>
-        </div>
-
-        <div class="nav__big">
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            aria-label="Open menu"
-            aria-expanded="false"
-            type="button"
-        >
-            <span></span><span></span><span></span>
-        </button>
-
-        <!-- Top-right menu = project filters only -->
-        <div class="lang-menu" id="langMenu" aria-hidden="true">
-            <a class="lang-item" href="#projects" data-filter="All">All</a>
-            <a class="lang-item" href="#projects" data-filter="Frontend">Frontend</a>
-            <a class="lang-item" href="#projects" data-filter="Full-Stack">Full-Stack</a>
-            <a class="lang-item" href="#projects" data-filter="Systems">Systems</a>
-            <a class="lang-item" href="#projects" data-filter="Data">Data</a>
-        </div>
-        </div>
-    </header>
-
-    <!-- Main content -->
-    <main class="maincontent">
-        <div id="top" class="top-anchor" aria-hidden="true"></div>
-        <!-- HERO -->
-        <section class="heading_block">
-        <div class="heading_content">
-            <div class="hero">
-            <h1 class="heading_title">
-                <span id="typewriter" class="typewriter" data-text="hi! i'm brandon"></span>
-            </h1>
-
-            <p class="hero-sub">
-                software developer based in the bay area
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="intro-header">
+                <h1 class="name">Brandon Wang</h1>
+                <div class="header-controls">
+                    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button id="dev-tools" class="icon-btn" aria-label="Developer tools">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <h2 class="role">Software Engineer</h2>
+            
+            <p class="bio">
+                I'm passionate about building software for humans. I'm optimistic about the future and technology's role in shaping it. Everyday, I learn something new.
             </p>
-
-            <div class="hero-actions">
-                <a class="btn primary" href="#projects">view projects</a>
-            </div>
-            </div>
-
-            <div class="bridge" aria-hidden="true"></div>
-
-            <!-- ABOUT -->
-            <section
-            class="card aboutsection reveal"
-            id="about"
-            data-modal-title="a bit about me."
-            data-modal-content="#about-modal-content"
-            tabindex="0"
-            role="button"
-            aria-label="Open About modal"
-            >
-            <div class="card-inner">
-                <h2 class="card-title">a bit about me.</h2>
-                <p class="card-text">
-                Hi! I’m Brandon, a CS student at Northwestern. I care about clean UI, readable code,
-                and building things that feel smooth to use.
-                </p>
-
-                <div class="card-cta">
-                <span class="hint">Click for details</span>
-                <span class="arrow">↗</span>
-                </div>
-            </div>
-            </section>
-
-            <template id="about-modal-content">
-                <div class="modal-left">
-                    <p>
-                        I’m Brandon Wang, a CS student at Northwestern. I like building polished web experiences and I’m intentional
-                        about details: spacing, motion, typography, and accessibility.
-                    </p>
-                    <p>
-                        I’m especially interested in full-stack work where performance and product thinking matter.
-                        I also enjoy writing code that stays maintainable as projects grow.
-                    </p>
-                    <p>
-                        Outside of programming, I am pursuing a dual degree in violin performance and have a huge interest in games, not only playing but breaking them down. 
-                    </p>
-               
-                    <ul>
-                        <li><b>What I optimize for:</b> clarity, UX, correctness, and speed.</li>
-                        <li><b>What I’m learning:</b> deeper systems + better front-end architecture.</li>
-                        <li><b>What I want:</b> build real products with real users.</li>
-                    </ul>
-                </div>
-                <img class="graduation" src="images/E11CB536-E23C-4F0D-92EC-F954A01D09A8_1_105_c.jpeg">
-            </template>
             
-            <div class="bridge" aria-hidden="true"></div>
-
-            <!-- PROJECTS -->
-            <section class="card reveal" id="projects">
-            <div class="card-inner">
-                <div class="card-head">
-                <div>
-                    <h2 class="card-title">projects.</h2>
-                    <p class="card-text">
-                    A few things I’ve built. Filter by category and click a card for details.
-                    </p>
-                </div>
-
-                <div class="project-controls">
-                    <input
-                    id="projectSearch"
-                    class="input"
-                    type="text"
-                    placeholder="Search projects…"
-                    autocomplete="off"
-                    aria-label="Search projects"
-                    />
-                    <div class="segmented" role="tablist" aria-label="Project filter">
-                    <button class="seg-btn is-active" data-filter="All" type="button">All</button>
-                    <button class="seg-btn" data-filter="Frontend" type="button">Frontend</button>
-                    <button class="seg-btn" data-filter="Full-Stack" type="button">Full-Stack</button>
-                    <button class="seg-btn" data-filter="Systems" type="button">Systems</button>
-                    <button class="seg-btn" data-filter="Data" type="button">Data</button>
-                    </div>
-                </div>
-                </div>
-
-                <div class="projects-grid" id="projectsGrid" aria-label="Project list">
-                <!-- Cards inserted by JS -->
-                </div>
-            </div>
-            </section>
-
-            <div class="bridge" aria-hidden="true"></div>
-
-            <!-- COURSES -->
-            <section class="card reveal" id="course">
-            <div class="card-inner">
-                <h2 class="card-title">learning.</h2>
-                <p class="card-text">
-                Courses I’ve taken and what I learned from each.
-                </p>
-
-                <div class="course-row">
-                <select id="course-select" class="course-select" aria-label="Select a course">
-                    <option value="">Select a course</option>
-                    <option value="cs111">COMP-SCI 111 – Programming Fundamentals</option>
-                    <option value="cs214">COMP-SCI 214 – Data Structures and Algorithms</option>
-                    <option value="cs212">COMP-SCI 212 – Discrete Math for CS</option>
-                </select>
-                <button class="btn primary" id="openCourseBtn" type="button" disabled>
-                    View Notes
-                </button>
-                </div>
-
-                <div class="course-preview" id="coursePreview" aria-live="polite">
-                <div class="course-empty">Select a course to preview what you learned.</div>
-                </div>
-            </div>
-            </section>
+            <p class="experience">
+                Previously, I've worked on innovative projects at various companies and contributed to open-source initiatives.
+            </p>
             
-        </div>
+            <div class="links">
+                <a href="https://github.com/brandonwang" class="link" target="_blank" rel="noopener">Github</a>
+                <a href="/resume.pdf" class="link" target="_blank">Resume</a>
+                <a href="mailto:abrandonwang@gmail.com" class="link email-link"></a>
+            </div>
         </section>
 
-        <!-- Modal -->
-        <div class="modal" id="modal" aria-hidden="true">
-        <div class="modal-backdrop" data-close></div>
+        <!-- Work Section -->
+        <section id="work" class="work-section">
+            <div class="section-header">
+                <h3 class="section-title">Work</h3>
+                <span class="count">6</span>
+                <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </div>
+            <div class="full-bleed">
 
-        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalBody">
-            <button class="modal-close" type="button" aria-label="Close" data-close>✕</button>
-            <h3 class="modal-title" id="modalTitle"></h3>
-            <div class="modal-body" id="modalBody"></div>
-        </div>
-        </div>
-
-        
-        <div class="bridge" aria-hidden="true"></div>
-        <!-- Toast -->
-        <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
-        <footer class="site-footer">
-            <!--
-            <div class="footer-inner">
-
-                <div class="footer-right">
-                <a class="footer-link" href="mailto:abrandonwang@gmail.com">
-                    Email <span class="arrow">↗</span>
-                </a>
-                <a class="footer-link" href="#projects">
-                    Projects <span class="arrow">↗</span>
-                </a>
-                <a class="footer-link" href="#top">
-                    Back to top <span class="arrow">↗</span>
-                </a>
+            
+                <div class="gallery">
+                    
+                    <div class="gallery-item" data-project="3">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop" alt="Things Project" class="project-image">
+                            <div class="project-overlay"></div>
+                            <div class="project-info">
+                                <h4 class="project-title">Placeholder</h4>
+                                <p class="project-type">Side Project</p>
+                                <span class="project-year">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-project="4">
+                        <div class="project-card">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop" alt="Open Source" class="project-image">
+                            <div class="project-overlay"></div>
+                            <div class="project-info">
+                                <h4 class="project-title">Password Generator</h4>
+                                <p class="project-type">First Project</p>
+                                <span class="project-year">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-project="5">
+                        <div class="project-card">
+                            <img src="images/E11CB536-E23C-4F0D-92EC-F954A01D09A8_1_105_c.jpeg" alt="Personal Project" class="project-image">
+                            <div class="project-overlay"></div>
+                            <div class="project-info">
+                                <h4 class="project-title">Personal Website</h4>
+                                <p class="project-type">Side Project</p>
+                                <span class="project-year">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn" aria-label="Previous">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="gallery-btn next-btn" aria-label="Next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        -->
+        </section>
 
-
-        <div class="footer-bottom">
-            <span>© <span id="year"></span> Brandon Wang</span>
-            <span class="footer-dot">•</span>
-            <span>CS @ Northwestern</span>
-            <span class="footer-dot">•</span>
-            <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer">GitHub</a>
-            <span class="footer-dot">•</span>
-            <a href="https://www.linkedin.com/in/brandon-wang-21195a266/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-        </footer>
-
-
-    </main>
+        <!-- Chat Section -->
+        <section id="chat" class="chat-section">
+            <div class="chat-header">
+                <div class="chat-avatar">BW</div>
+                <div class="chat-info">
+                    <h3 class="chat-name">Brandon Wang AI</h3>
+                    <p class="chat-status">Online</p>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        Hey! I'm an AI version of Brandon. Ask me anything about my work, experience, or interests!
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
+                <button id="chat-send" class="chat-send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <div class = "gallery-spacer"></div>
+        </section>
     </div>
 
-    <script src="app.js" defer></script>
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="project-modal">
+        <button class="modal-close" id="modal-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Back
+        </button>
+        <div class="modal-content" id="modal-content">
+            <!-- Content will be populated dynamically -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
